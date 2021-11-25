@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Lilac - магазин цветов в Москве</title>
+        <link rel ="icon" href="/images/flower.ico" type = "image/x-icon">
+        <link rel="stylesheet" th:href="@{/styles/style.css}">
+        <link rel="stylesheet" th:href="@{/font-awesome-4.7.0/css/font-awesome.min.css}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="BigHeaderProduct">
+            <div class="headerProduct">
+                <div class="icons">
+                    <a href=""><i class="fa fa-facebook fa-1x" aria-hidden="true"></i></a>
+                    <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href=""><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                    <a href=""><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+                    <a href=""><i class="fa fa-camera-retro" aria-hidden="true"></i></a>
+                </div>
+                <a th:href="@{/basket}">
+                    <img class="basket" src="images/cart.png">
+                </a>
+            </div>
+        </div>
+        <div class="BigContentProduct">
+            <div class="content">
+                <div class="menu">
+                    <div id="menucaption"><p>Меню</p></div>
+                    <a href="">
+                        <div class="menuitem"><p>О нас</p></div>
+                    </a>
+                    <a th:each="type : ${types}" th:href="@{'/#' + ${type.id}}">
+                        <div class="menuitem">
+                            <p th:text="${type.name}"></p>
+                        </div>
+                    </a>
+                    <a th:href="@{/productTypeList}">
+                        <div class="menuitem"><p>Админ</p></div>
+                    </a>
+                    <a href="">
+                        <div class="menuitem"><p>Акции</p></div>
+                    </a>
+                    <a href="">
+                        <div class="menuitem"><p>Контакты</p></div>
+                    </a>
+                </div>
+				<div class="productsProduct">
+                    <div class="newproductsProduct">
+                        <form th:action="@{/product}" th:object="${basket}" method="post">
+                        <div id="newproducts_caption">
+                            <p th:text="${basket.product.name}"></p>
+                        </div>
+                        <div>
+                            <div class="product">
+                                <img class="triangle" src="images/New.png" alt="new" th:if="${basket.product.newProduct} == true">
+                                <img class="triangle" src="images/Hot.png" alt="new" th:if="${basket.product.hotProduct} == true">
+                                <img class="foto" th:src="@{'/images/' + ${basket.product.image}}" alt="">
+                                <div class="product_name">
+                                    <span th:text="${basket.product.name}"></span>
+                                </div>
+                                <div class="product_price">
+                                    ₽ <span th:text="${basket.product.price}"></span><br>
+                                    <span class="product_old_price" th:unless="${basket.product.oldPrice} == 0">
+                                        ₽ <span th:text="${basket.product.oldPrice}"></span>
+                                    </span>
+                                </div>
+                            </div>
+                                <input type="text" class="input" id = quantity  th:field="*{quantity}" required/>
+                                <p><input type="submit" class="btn btn-secondary" value="Купить"/>
+                                    <a th:if="${inBasket}" th:href="@{'/product/delete/' + ${basket.id}}" class="btn btn-danger">Удалить</a>
+						</div>
+                            <input type="text" th:field="*{product}" hidden/>
+                            <input type="text" th:field="*{id}" hidden/>
+                        </form>
+					</div>
+					<div class="topproductsProduct">
+                        <div id="topproductsProduct_caption">
+                            <p>Описание</p>
+                        </div>
+                        <div>
+                            <p id="description" th:text="${basket.product.description}"></p>
+                        </div>
+                    </div>
+				</div>
+            </div>
+        </div>
+        <div class="BigFooter">
+            <div class="SubFooter">
+                <div class="ContentSubFooter">
+                    <div id="copy">
+                        &copy; LILAC. All rights reserved
+                    </div>
+                    <div id="social">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                        <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                        <i class="fa fa-google-plus" aria-hidden="true"></i>
+                        <i class="fa fa-tumblr" aria-hidden="true"></i>
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                        <i class="fa fa-rss" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lilac - магазин цветов в Москве</title>
+    <link rel="icon" href="/images/flower.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="BigHeader">
+    <div class="header">
+        <img class="logo" src="images/flower.png" alt="Logo">
+        <div class="icons">
+            <a href=""><i class="fa fa-facebook fa-1x" aria-hidden="true"></i></a>
+            <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href=""><i class="fa fa-youtube" aria-hidden="true"></i></a>
+            <a href=""><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+            <a href=""><i class="fa fa-camera-retro" aria-hidden="true"></i></a>
+        </div>
+        <p id="lilac">Lilac</p>
+        <p id="descriptionlilac">Магазин цветов в городе Москва, огромный ассортимент,
+            работаем с любовью 24/7, доставка в любую точку города</p>
+        <a th:href="@{/basket}">
+        <img class="basket" src="images/cart.png">
+        </a>
+    </div>
+</div>
+<div class="BigContent">
+    <div class="content">
+        <div class="menu">
+            <div id="menucaption"><p>Меню</p></div>
+            <a href="">
+                <div class="menuitem"><p>О нас</p></div>
+            </a>
+            <a th:each="element : ${map}" th:href="'#' + ${element.key.id}">
+                <div class="menuitem">
+                    <p th:text="${element.key.name}"></p>
+                </div>
+            </a>
+            <a th:href="@{/productTypeList}">
+                <div class="menuitem"><p>Админ</p></div>
+            </a>
+            <a href="">
+                <div class="menuitem"><p>Акции</p></div>
+            </a>
+            <a href="">
+                <div class="menuitem"><p>Контакты</p></div>
+            </a>
+        </div>
+        <div class="products">
+            <div class="newproducts">
+                <div id="newproducts_caption">
+                    <p>Новинки</p>
+                </div>
+                <div>
+                    <div class="product" th:each="prod : ${newProducts}"
+                         th:attr="onclick=|window.location.href='product?id=' + ${prod.id}|">
+                        <img class="triangle" src="images/New.png" alt="new">
+                        <img class="foto" th:src="@{'/images/' + ${prod.image}}" alt="">
+                        <div class="product_name" th:text="${prod.name}">
+                        </div>
+                        <div class="product_price">
+                            ₽ <span th:text="${prod.price}"></span><br>
+                            <span class="product_old_price" th:unless="${prod.oldPrice} == 0">
+                                        ₽ <span th:text="${prod.oldPrice}"></span>
+                                    </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="newproducts">
+                <div id="topproducts_caption">
+                    <p>Популярные продукты</p>
+                </div>
+                <div>
+                    <div class="product" th:each="prod : ${hotProducts}"
+                         th:attr="onclick=|window.location.href='product?id=' + ${prod.id}|">
+                        <img class="triangle" src="images/Hot.png" alt="new">
+                        <img class="foto" th:src="@{'/images/' + ${prod.image}}" alt="">
+                        <div class="product_name" th:text="${prod.name}">
+                        </div>
+                        <div class="product_price">
+                            ₽ <span th:text="${prod.price}"></span><br>
+                            <span class="product_old_price" th:unless="${prod.oldPrice} == 0">
+                                        ₽ <span th:text="${prod.oldPrice}"></span>
+                                    </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="newproducts">
+                <div id="saleproducts_caption">
+                    <p>Скидки</p>
+                </div>
+                <div>
+                    <div class="product" th:each="prod : ${saleProducts}"
+                         th:attr="onclick=|window.location.href='product?id=' + ${prod.id}|">
+                        <img class="triangle" src="images/New.png" alt="new" th:if="${prod.newProduct} == true">
+                        <img class="triangle" src="images/Hot.png" alt="new" th:if="${prod.hotProduct} == true">
+                        <img class="foto" th:src="@{'/images/' + ${prod.image}}" alt="">
+                        <div class="product_name" th:text="${prod.name}">
+                        </div>
+                        <div class="product_price">
+                            ₽ <span th:text="${prod.price}"></span><br>
+                            <span class="product_old_price" th:unless="${prod.oldPrice} == 0">
+                                        ₽ <span th:text="${prod.oldPrice}"></span>
+                                    </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="newproducts" th:each="element : ${map}" th:id="${element.key.id}">
+                <div id="products_caption">
+                    <p th:text="${element.key.name}"></p>
+                </div>
+                <div>
+                    <!--                        <div class="product" th:each="prod : ${element.value}" th:attr="onclick=|window.location.href='product/' + ${prod.id}|">-->
+                    <div class="product" th:each="prod : ${element.value}"
+                         th:attr="onclick=|window.location.href='product?id=' + ${prod.id}|">
+                        <img class="triangle" src="images/New.png" alt="new" th:if="${prod.newProduct} == true">
+                        <img class="triangle" src="images/Hot.png" alt="new" th:if="${prod.hotProduct} == true">
+                        <img class="foto" th:src="@{'/images/' + ${prod.image}}" alt="">
+                        <div class="product_name" th:text="${prod.name}">
+                        </div>
+                        <div class="product_price">
+                            ₽ <span th:text="${prod.price}"></span><br>
+                            <span class="product_old_price" th:unless="${prod.oldPrice} == 0">
+                                        ₽ <span th:text="${prod.oldPrice}"></span>
+                                    </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="now">
+            <p>Мы открыты!</p>
+        </div>
+        <div id="instagram">
+            <p>
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+                Instagram: #lilac
+            </p>
+        </div>
+        <div id="foto">
+            <img src="images/foto1.png" alt="foto1">
+            <img src="images/foto2.png" alt="foto2">
+            <img src="images/foto3.png" alt="foto3">
+            <img src="images/foto4.png" alt="foto4">
+            <img src="images/foto5.png" alt="foto5">
+            <img src="images/foto6.png" alt="foto6">
+        </div>
+        <div id="stride"></div>
+    </div>
+</div>
+<div class="BigFooter">
+    <div class="SubFooter">
+        <div class="ContentSubFooter">
+            <div id="copy">
+                &copy; LILAC. All rights reserved.
+            </div>
+            <div id="social">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                <i class="fa fa-google-plus" aria-hidden="true"></i>
+                <i class="fa fa-tumblr" aria-hidden="true"></i>
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+                <i class="fa fa-rss" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$('a[href*="#"]').on('click', function (e) {
+  e.preventDefault();
+
+  $('html, body').animate({
+    scrollTop: $($(this).attr('href')).offset().top
+  }, 500, 'linear');
+});
+
+</script>
+</body>
+</html>

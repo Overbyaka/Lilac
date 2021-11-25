@@ -1,0 +1,588 @@
+@font-face
+{
+    font-family: "Raleway";
+    src: url("../fonts/raleway-bold.ttf");
+}
+@font-face
+{
+    font-family: "Raleway2";
+    src: url("../fonts/raleway-extrabold.ttf");
+}
+@font-face
+{
+    font-family: "Raleway3";
+    src: url("../fonts/raleway-regular.ttf");
+}
+@font-face
+{
+    font-family: "Raleway4";
+    src: url("../fonts/raleway-heavy.ttf");
+}
+@font-face
+{
+    font-family: "Roboto";
+    src: url("../fonts/Roboto-bold.ttf");
+}
+@font-face
+{
+    font-family: "Roboto2";
+    src: url("../fonts/Roboto-black-italic.ttf");
+}
+@font-face
+{
+    font-family: "Roboto regular";
+    src: url("../fonts/Roboto-regular.ttf");
+}
+
+head, body
+{
+    padding: 0;
+    margin: 0;
+}
+.BigHeader
+{
+    background-color: #6a4f67;
+    background-blend-mode: multiply;
+    width: 100%;
+    height: 700px;
+	background-image: url("../images/Background.jpg");
+	background-size: cover;
+    float: left;
+}
+.BigContent
+{
+    background-color: #fce6ff;
+    width: 100%;
+    float: left;
+}
+.BigFooter
+{
+    width: 100%;
+    background-color: #373737;
+    float: left;
+}
+.header
+{
+    height: 100%;
+    width: 1170px;
+    margin: 0 auto;
+    position: relative;
+}
+.logo img
+{
+    position: relative;
+    left: 70px;
+    top: 25px;
+}
+.icons
+{
+    position: absolute;
+    top: 50px;
+    left: 986px;
+    width: 120px;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-shadow: 1px 1px 1px #000000;
+}
+.icons a
+{
+    color: white;
+}
+#lilac
+{
+    font-family: Raleway2, sans-serif;
+    color:  #ff7993;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 34px;
+    text-align: left;
+    width: 275px;
+    position: absolute;
+    top: 195px;
+    left: 748px;
+    text-shadow: 1px 1px 1px #000000;
+}
+#descriptionlilac
+{
+    font-family: Raleway3, sans-serif;
+    color:  #cbe7e7;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    width: 315px;
+    position: absolute;
+    top: 300px;
+    left: 748px;
+    text-shadow: 1px 1px 1px #000000;
+}
+.content
+{
+    width: 1170px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+.menu
+{
+    width: 270px;
+    float: left;
+    margin-top: -40px;
+}
+.now
+{
+    width: 270px;
+    height: 300px;
+    float: left;
+    margin-top: 30px;
+    position: relative;
+    background: url("../images/Shop.png") no-repeat;
+    background-size: cover;
+}
+.products
+{
+    width: 870px;
+    min-height: 800px;
+    float: right;
+    background-color: #f8f8f8;
+    margin-top: -40px;
+}
+#menucaption
+{
+    width: 100%;
+    height: 66px;
+    background-color: #000000;
+}
+#menucaption p
+{
+    margin: 0 0;
+    font-family: Roboto, sans-serif;
+    color:  #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 32px;
+    text-transform: uppercase;
+    padding-left: 42px;
+    padding-top: 22px;
+}
+.menuitem
+{
+    width: 100%;
+    height: 37.3px;
+    background-color: #ffa9f8;
+}
+.menuitem p
+{
+    margin: 0 0;
+    font-family: Roboto, sans-serif;
+    color:  #000000;
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 36px;
+    text-transform: uppercase;
+    padding-left: 42px;
+}
+.menu a
+{
+    text-decoration: none;
+}
+.menuitem:hover
+{
+    background-color: #333333;
+}
+.menuitem p:hover
+{
+    color:  #ffffff;
+}
+.now p
+{
+    font-family: Raleway4, sans-serif;
+    color:  white;
+    text-shadow: 5px 5px 5px #000000;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 36px;
+    text-align: left;
+    text-transform: uppercase;
+    font-style: italic;
+    width: 96px;
+    position: absolute;
+    top: 150px;
+    left: 10px;
+}
+.newproducts
+{
+    width: 100%;
+    position: relative;
+    float: left;
+}
+.topproducts
+{
+    width: 100%;
+    min-height: 400px;
+    position: relative;
+    float: left;
+}
+.saleproducts
+{
+    width: 100%;
+    min-height: 400px;
+    position: relative;
+    float: left;
+}
+#newproducts_caption
+{
+    width: 100%;
+    height: 80px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    float: left;
+}
+#newproducts_caption p
+{
+    font-family: Roboto, sans-serif;
+    color:  #707070;
+    font-size: 22px;
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+    padding-left: 21px;
+    padding-top: 26px;
+}
+#topproducts_caption
+{
+    width: 100%;
+    height: 80px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    float: left;
+}
+#topproducts_caption p
+{
+    font-family: Roboto, sans-serif;
+    color:  #707070;
+    font-size: 22px;
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+    padding-left: 23px;
+    padding-top: 25px;
+}
+#saleproducts_caption
+{
+    width: 100%;
+    height: 80px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    float: left;
+}
+#saleproducts_caption p
+{
+    font-family: Roboto, sans-serif;
+    color:  #707070;
+    font-size: 22px;
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+    padding-left: 25px;
+    padding-top: 27px;
+}
+#products_caption
+{
+    width: 100%;
+    height: 80px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    float: left;
+}
+#products_caption p
+{
+    font-family: Roboto, sans-serif;
+    color:  #707070;
+    font-size: 22px;
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+    padding-left: 23px;
+    padding-top: 25px;
+}
+.product
+{
+    width: 30%;
+    height: 322px;
+    float: left;
+    margin-right: 5%;
+    margin-bottom: 30px;
+    background-color: #eaeaea;
+    position: relative;
+}
+.product:nth-child(3n)
+{
+    margin-right: 0;
+}
+.foto
+{
+    width: 250px;
+    height: 235px;
+    object-fit: cover;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+.triangle
+{
+    position: absolute;
+    right: 0px;
+}
+
+.product_name {
+    width: 155px;
+    float: left;
+    font-size: 14px;
+    font-family: "Roboto2", sans-serif;
+    max-height: 2.2em;
+    overflow: hidden;
+    padding-top: 15px;
+    padding-left: 10px;
+}
+.product_price {
+    width: 85px;
+    float: right;
+    text-align: right;
+    font-size: 18px;
+    font-family: "Roboto2", sans-serif;
+    line-height: 0.95;
+    padding-top: 30px;
+    padding-right: 10px;
+}
+.product_price_basket {
+    width: 85px;
+    float: right;
+    text-align: right;
+    font-size: 18px;
+    font-family: "Roboto2", sans-serif;
+    line-height: 0.95;
+    padding-top:2px;
+    padding-right: 10px;
+}
+.product_old_price {
+    font-size: 14px;
+    text-decoration: line-through;
+    color: #e24602;
+}
+#instagram
+{
+    width: 100%;
+    height: 107px;
+    background-color: #eaeaea;
+    font-family: Roboto2, sans-serif;
+    color:  #333333;
+    font-size: 22px;
+    font-weight: 900;
+    text-align: center;
+    float: left;
+}
+#instagram p
+{
+    padding-top: 30px;
+}
+
+#foto
+{
+    width: 100%;
+    height: 190px;
+    background-color: #eaeaea;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    float: left;
+}
+#stride
+{
+    width: 100%;
+    height: 73px;
+    background-color: #eaeaea;
+    float: left;
+}
+.SubFooter
+{
+    width: 100%;
+    height: 46px;
+    float: left;
+    background-color: #333333;
+}
+.ContentSubFooter
+{
+    width: 1170px;
+    height: 100%;
+    margin: 0 auto;
+}
+#copy
+{
+    float: left;
+    font-family: Roboto regular, sans-serif;
+    color:  #dad9d9;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 21.6px;
+    padding-top: 12px;
+}
+#social
+{
+    float: right;
+    width: 180px;
+    height: 100%;
+    color:  #dad9d9;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.label
+{
+    font-family: Raleway2;
+    color:  #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+}
+.product:hover
+{
+	cursor: pointer;
+	background-color: #c8c8c8;
+}
+
+.BigHeaderProduct
+{
+    background-color: #6a4f67;
+    background-blend-mode: multiply;
+    width: 100%;
+    height: 200px;
+    background-image: url("../images/Background.jpg");
+	background-size: cover;
+    float: left;
+}
+
+.headerProduct
+{
+    height: 100%;
+    width: 1170px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.BigContentProduct
+{
+    background-color: #f8f8f8;
+    width: 100%;
+    float: left;
+}
+
+.productsProduct
+{
+    width: 870px;
+    min-height: 800px;
+    float: right;
+    background-color: #f8f8f8;
+    margin-top: -20px;
+}
+.newproductsProduct
+{
+    width: 100%;
+    min-height: 400px;
+    position: relative;
+    float: left;
+}
+.topproductsProduct
+{
+    width: 100%;
+    min-height: 250px;
+    position: relative;
+    float: left;
+    background-color: #f8f8f8;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+#topproductsProduct_caption
+{
+    width: 100%;
+    height: 50px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    float: left;
+}
+
+#topproductsProduct_caption p
+{
+    font-family: Roboto, sans-serif;
+    color:  #707070;
+    font-size: 18px;
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+    padding-left: 23px;
+    padding-top: 25px;
+}
+
+#description
+{
+    float: left;
+    font-size: 14px;
+    font-family: "Roboto2", sans-serif;
+    overflow: hidden;
+    padding-left: 23px;
+	padding-right: 23px;
+	text-align: justify;
+}
+
+.buy
+{
+    background-color: #ffa9f8;
+    width: 125px;
+    height: 50px;
+    float: left;
+    font-family: Raleway4, sans-serif;
+    color:  #000000;
+    font-size: 14px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 50px;
+    text-transform: uppercase;
+	border-radius: 25px;
+	margin-top: 25px;
+}
+
+.newproductsProduct .input
+{
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    padding: 0.375rem 0.75rem;
+    display: block;
+    font-size: 14px;
+    font-family: "Roboto2", sans-serif;
+    margin: 10px;
+}
+
+.basket {
+    position: absolute;
+    left: 1050px;
+    top: 100px;
+    width: 5%;
+    display: block;
+}
+
+.buyProduct{
+        width: 30%;
+        height: 322px;
+        float: left;
+        margin-right: 5%;
+        margin-bottom: 30px;
+        position: relative;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+}
